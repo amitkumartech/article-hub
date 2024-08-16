@@ -1,0 +1,9 @@
+<div class="article-list">
+  <h4>Here are some caption text options for "Here are some latest articles you may like":</h4>
+  <div class="article-preview" *ngFor="let article of articles">
+    <h2>{{ article.title }}</h2>
+    <p>Author: {{ article.author }}</p>
+    <p>Published: {{ article.publishedAt | date }}</p>
+    <a routerLink="/article-view/{{ article.id }}">Read More</a>
+  </div>
+</div>
