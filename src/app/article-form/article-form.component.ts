@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, SecurityContext } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Editor, Toolbar } from 'ngx-editor';
 import { ArticleService } from '../services/article.service';
 import { Article } from '../models/article.model';
@@ -31,7 +31,8 @@ export class ArticleFormComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private articleservice: ArticleService,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router
   ) {
 
     this.articleForm = this.fb.group({
@@ -59,12 +60,15 @@ export class ArticleFormComponent implements OnInit, OnDestroy {
       article.publishedAt = new Date(); // Add publishedAt here
       this.articleservice.addArticle(article).subscribe(response => {
         console.log(response);
-
+        this.navigateToArticleView(response);
       })
       console.log("articled published!");
 
       this.articleForm.reset();
     }
+  }
+  navigateToArticleView(articleId: string) {
+    this.router.navigate(['/article-view', articleId]); // Use array for path segments
   }
 
   public sanitizeHtmlContent(htmlstring: string): SafeHtml {

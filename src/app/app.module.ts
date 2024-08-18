@@ -9,14 +9,16 @@ import { ArticleFormComponent } from './article-form/article-form.component';
 import { ArticleViewComponent } from './article-view/article-view.component';
 import { ArticleComponent } from './article/article.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { LoginComponent } from './login/login.component' 
+import { LoginComponent } from './login/login.component';
+import { NoContentComponent } from './no-content/no-content.component' 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     ArticleViewComponent,
     ArticleFormComponent,
-    LoginComponent
+    LoginComponent,
+    NoContentComponent
   ],
   imports: [
     BrowserModule,

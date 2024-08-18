@@ -34,7 +34,7 @@ export class ArticleService {
     return this.articles$;
   }
 
-  addArticle(article: Article): Observable<Article> {
+  addArticle(article: Article): Observable<string> {
     article.id = this.commonService.generateGuid();
 
     // Update the local articles list and BehaviorSubject
@@ -45,7 +45,7 @@ export class ArticleService {
     const articlesString = JSON.stringify(this.articles);
     localStorage.setItem('articles', articlesString);
 
-    return of(article);
+    return of(article.id);
   }
 
   getArticleById(id: string): Observable<Article> {

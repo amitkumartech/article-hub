@@ -1,45 +1,65 @@
 .login-form {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 60%; /* Adjust width as needed */
-    max-width: 300px; /* Set a maximum width for larger screens */
-    margin: 0 auto; /* Center the form horizontally */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .form-group {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    width: 50%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Responsive adjustments */
-  @media (min-width: 768px) {
-    .login-form {
-      width: 400px;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 60%;
+  /* Adjust width as needed */
+  // max-width: 300px; /* Set a maximum width for larger screens */
+  margin: 0 auto;
+  /* Center the form horizontally */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    width: 60%;
+    /* Adjust width as needed */
+  }
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    /* Styles for all devices larger than 768px (typically tablets and desktops) */
+    width: 30%;
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .login-form {
+    // width: 400px;
+  }
+}

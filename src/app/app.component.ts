@@ -8,8 +8,16 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'article-publisher';
+  isAuthenticated: boolean = false;
 
   constructor(private authService: AuthService) {
+    this.authService.isLoggedIn$.subscribe(response => {
+      if (response) {
+        // Add logic to check user roles here if needed
+        this.isAuthenticated = true;
+      }
+    })
+
 
   }
 

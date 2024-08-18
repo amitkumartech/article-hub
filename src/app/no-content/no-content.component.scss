@@ -1,0 +1,38 @@
+.no-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+  padding: 20px;
+  width: 60%;
+  /* Adjust width as needed */
+  margin: 0 auto;
+  /* Center the form horizontally */
+  overflow: hidden;
+}
+
+.no-content-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.no-content-container p {
+  margin-bottom: 1rem;
+}
+
+.no-content-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    /* Styles for all devices larger than 768px (typically tablets and desktops) */
+    width: 30%;
+  }
+}
