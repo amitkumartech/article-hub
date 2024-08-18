@@ -11,6 +11,7 @@ import { ArticleComponent } from './article/article.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './login/login.component';
 import { NoContentComponent } from './no-content/no-content.component' 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,9 @@ import { NoContentComponent } from './no-content/no-content.component'
     ReactiveFormsModule,
     NgxEditorModule    
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
